@@ -1,5 +1,6 @@
 
 <script setup>
+import L from "leaflet";
 import { LMap, LTileLayer ,LMarker, LIcon, LImageOverlay} from "@vue-leaflet/vue-leaflet";
 import Chart from 'chart.js/auto';
 import "leaflet/dist/leaflet.css";
@@ -71,16 +72,19 @@ const addPie = () => {
 }
 const zoom = ref(12)
 
-watch([pie, zoom], ([a, b], [oldA, olB]) => {
-    console.log({a, b, oldA, olB})
-    console.log(a.isSameNode(oldA))
-    console.log(a?.toDataURL())
-})
+// watch([pie, zoom], ([a, b], [oldA, olB]) => {
+//     console.log({a, b, oldA, olB})
+//     console.log(a.isSameNode(oldA))
+//     console.log(a?.toDataURL())
+// })
 let canvases = []
 setInterval(() => {
   const newCanvases = Array.from(document.querySelectorAll("canvas"))
   for(let i = 0; i < canvases.length; i++) {
-    console.log(canvases[i].isSameNode(newCanvases[i]))
+    if(!canvases[i].isSameNode(newCanvases[i])) {
+        console.log(newCanvases[i].toDataURL())
+        console.log(canvases[i].toDataURL())
+    }
   }
   canvases = newCanvases
 
@@ -110,11 +114,11 @@ const data = reactive({
     <!-- <img src="src/assets/paris_bien_etre.jpg" /> -->
     <div style="height:600px; width:800px">
     <l-map ref="map" v-model:zoom="zoom" :center="[48.913749, 2.225493]">
-      <!-- <l-tile-layer
+      <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
         name="OpenStreetMap"
-      ></l-tile-layer> -->
+      ></l-tile-layer>
       <l-marker :lat-lng="[48.879411, 2.290932]">
         <l-icon
           :icon-anchor="[100, 100]"
@@ -130,7 +134,7 @@ const data = reactive({
   </div>
 </template>
 
-<style scoped>
+<style>
 div {
     color: red;
 }
