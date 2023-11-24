@@ -1,0 +1,58 @@
+[
+    {
+      "sizeInMeters": 678,
+      "latitude": 48.8778688667595,
+      "longitude": 2.289962768554688,
+      "title": "Les Ternes",
+      "data": [
+        {
+          "label": "At least 1 male and 1 female",
+          "value": 4,
+          "backgroundColor": "#cc766e80"
+        },
+        {
+          "label": "At least 1 female",
+          "value": 32,
+          "backgroundColor": "#7b968780"
+        },
+        {
+          "label": "No domestic - Boss or employee",
+          "value": 25,
+          "backgroundColor": "#d9ae3c80"
+        },
+        {
+          "label": "No domestic - Worker",
+          "value": 39,
+          "backgroundColor": "#72635d80"
+        }
+      ]
+    },
+    {
+      "sizeInMeters": 492,
+      "latitude": 48.869175102781284,
+      "longitude": 2.288117408752442,
+      "title": "Victor Hugo",
+      "data": [
+        {
+          "label": "At least 1 male and 1 female",
+          "value": 22,
+          "backgroundColor": "#cc766e80"
+        },
+        {
+          "label": "At least 1 female",
+          "value": 25,
+          "backgroundColor": "#7b968780"
+        },
+        {
+          "label": "No domestic - Boss or employee",
+          "value": 7,
+          "backgroundColor": "#d9ae3c80"
+        },
+        {
+          "label": "No domestic - Worker",
+          "value": 46,
+          "backgroundColor": "#72635d80"
+        }
+      ]
+    }
+  ]
