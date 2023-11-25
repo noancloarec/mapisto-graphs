@@ -1,32 +1,35 @@
 <script setup>
-import { defineProps, onMounted, ref, watch } from 'vue'
+import { defineProps, defineEmits, onMounted, ref, watch } from 'vue'
 import L, { LatLng } from "leaflet";
 import { LMap, LTileLayer, LMarker, LIcon, LImageOverlay } from "@vue-leaflet/vue-leaflet";
 import Chart from 'chart.js/auto';
 
 onMounted(() => {
+    console.log("mounted")
     setTimeout(() => {
         drawChart()
-    }, 100)
+    }, 1000)
 })
 
-const props = defineProps(['lat-lng', 'diameter-in-meters', 'data', 'title', 'meters-per-px'])
+const props = defineProps(['id', 'lat-lng', 'diameter-in-meters', 'data', 'title', 'meters-per-px', 'draggable'])
+const emit = defineEmits(['on-position-updated'])
 
-
-const circlePositionUpdated = () => { }
+const circlePositionUpdated = (newPosition) => {
+    console.log("circlePositionUpdated")
+    emit('on-position-updated', newPosition)
+}
 const container = ref(null)
-let chart = undefined
 
 const getCircleSizeInPixels = () => {
     const size = props.diameterInMeters / props.metersPerPx
     return size + 220;
 }
+let chart = undefined
 
-const id = "chart-" + Math.random().toString(36).substring(2, 9)
+const id = `chart-${props.id}`
 
 const drawChart = () => {
     chart?.destroy()
-    console.log(container.value.querySelector("canvas"))
     chart = new Chart(document.getElementById(id), {
         type: 'pie',
         data: {
@@ -50,7 +53,7 @@ const drawChart = () => {
                 }
             },
             animation: {
-                duration: 0
+                // duration: 0
             },
 
             plugins: {
@@ -60,9 +63,6 @@ const drawChart = () => {
             }
         }
     })
-    console.log("drawn chart")
-    console.log(chart)
-
 }
 
 watch(props, () => {
@@ -74,10 +74,9 @@ watch(props, () => {
 </script>
 
 <template>
-    <l-marker :lat-lng="props.latLng" :draggable="true" @update:lat-lng="position => circlePositionUpdated(position)">
+    <l-marker :lat-lng="props.latLng" :draggable="props.draggable" @update:lat-lng="position => circlePositionUpdated(position)">
         <l-icon :icon-size="[getCircleSizeInPixels(), getCircleSizeInPixels()]"
-            :icon-anchor="[getCircleSizeInPixels() / 2, getCircleSizeInPixels() / 2]"
-            class-name="someExtraClass">
+            :icon-anchor="[getCircleSizeInPixels() / 2, getCircleSizeInPixels() / 2]" class-name="someExtraClass">
             <div ref="container" class="chart-container">
                 <canvas :id="id"></canvas>
             </div>

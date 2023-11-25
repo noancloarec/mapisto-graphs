@@ -1,58 +1,814 @@
 [
-    {
-      "sizeInMeters": 678,
-      "latitude": 48.8778688667595,
-      "longitude": 2.289962768554688,
-      "title": "Les Ternes",
-      "data": [
-        {
-          "label": "At least 1 male and 1 female",
-          "value": 4,
-          "backgroundColor": "#cc766e80"
-        },
-        {
-          "label": "At least 1 female",
-          "value": 32,
-          "backgroundColor": "#7b968780"
-        },
-        {
-          "label": "No domestic - Boss or employee",
-          "value": 25,
-          "backgroundColor": "#d9ae3c80"
-        },
-        {
-          "label": "No domestic - Worker",
-          "value": 39,
-          "backgroundColor": "#72635d80"
-        }
-      ]
-    },
-    {
-      "sizeInMeters": 492,
-      "latitude": 48.869175102781284,
-      "longitude": 2.288117408752442,
-      "title": "Victor Hugo",
-      "data": [
-        {
-          "label": "At least 1 male and 1 female",
-          "value": 22,
-          "backgroundColor": "#cc766e80"
-        },
-        {
-          "label": "At least 1 female",
-          "value": 25,
-          "backgroundColor": "#7b968780"
-        },
-        {
-          "label": "No domestic - Boss or employee",
-          "value": 7,
-          "backgroundColor": "#d9ae3c80"
-        },
-        {
-          "label": "No domestic - Worker",
-          "value": 46,
-          "backgroundColor": "#72635d80"
-        }
-      ]
-    }
-  ]
+  {
+    "sizeInMeters": 702,
+    "latitude": 48.8778688667595,
+    "longitude": 2.289962768554688,
+    "title": "Les Ternes",
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 4,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 32,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 25,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 39,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "sizeInMeters": 492,
+    "latitude": 48.869175102781284,
+    "longitude": 2.288117408752442,
+    "title": "Victor Hugo",
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 22,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 25,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 7,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 46,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Passy",
+    "latitude": 48.855672830269654,
+    "longitude": 2.2718203067779545,
+    "sizeInMeters": 486,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 7,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 30,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 26,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 37,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Bois de Boulogne",
+    "latitude": 48.86894927642326,
+    "longitude": 2.277796261082559,
+    "sizeInMeters": 357,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 10,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 31,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 23,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 36,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Auteuil",
+    "latitude": 48.84305658364164,
+    "longitude": 2.261981982562769,
+    "sizeInMeters": 411,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 9,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 20,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 24,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 47,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Grenelle Sud",
+    "latitude": 48.8392435483419,
+    "longitude": 2.278053760528565,
+    "sizeInMeters": 453,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 0,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 3,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 20,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 77,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Grenelle Nord",
+    "latitude": 48.846826997581694,
+    "longitude": 2.2908425331115727,
+    "sizeInMeters": 654,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 4,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 26,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 69,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Champ de Mars",
+    "latitude": 48.85625872894688,
+    "longitude": 2.298030853271485,
+    "sizeInMeters": 585,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 3,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 12,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 32,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 53,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "École Militaire",
+    "latitude": 48.84864144640689,
+    "longitude": 2.3072791099548344,
+    "sizeInMeters": 417,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 6,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 17,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 50,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 27,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Vaugirard Sud",
+    "latitude": 48.83069141657086,
+    "longitude": 2.2977840900421147,
+    "sizeInMeters": 519,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 8,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 29,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 62,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Vaugirard Nord",
+    "latitude": 48.839462465491785,
+    "longitude": 2.3101866339514787,
+    "sizeInMeters": 651,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 4,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 30,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 65,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Petit Montrouge",
+    "latitude": 48.826757391656244,
+    "longitude": 2.3133945653577914,
+    "sizeInMeters": 729,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 2,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 4,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 35,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 59,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Avenue d'Orléans",
+    "latitude": 48.82369888836425,
+    "longitude": 2.3243379592895512,
+    "sizeInMeters": 516,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 3,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 12,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 41,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 44,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Avenue Montsouris",
+    "latitude": 48.82080981349969,
+    "longitude": 2.3351526574526287,
+    "sizeInMeters": 300,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 4,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 29,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 66,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Cimetière du Sud",
+    "latitude": 48.83557149325575,
+    "longitude": 2.3265480995178227,
+    "sizeInMeters": 500,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 4,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 7,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 36,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 53,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Rue de Rennes",
+    "latitude": 48.84441208481461,
+    "longitude": 2.3252394454047876,
+    "sizeInMeters": 678,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 5,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 23,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 36,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 36,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Luxembourg",
+    "latitude": 48.846544561177616,
+    "longitude": 2.335217017902958,
+    "sizeInMeters": 519,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 6,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 33,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 30,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 31,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Invalides",
+    "latitude": 48.85445864361957,
+    "longitude": 2.3152077480764004,
+    "sizeInMeters": 354,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 50,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 4,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 16,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 30,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Grenelle",
+    "latitude": 48.852185504136976,
+    "longitude": 2.324488162994385,
+    "sizeInMeters": 528,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 18,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 35,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 16,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 31,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Université",
+    "latitude": 48.85238318336465,
+    "longitude": 2.332599150489392,
+    "sizeInMeters": 459,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 6,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 37,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 13,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 44,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Quai Conti",
+    "latitude": 48.851451277960784,
+    "longitude": 2.3389828205108647,
+    "sizeInMeters": 486,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 13,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 23,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 27,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 37,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Cluny",
+    "latitude": 48.84647395701655,
+    "longitude": 2.3444009267020065,
+    "sizeInMeters": 639,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 3,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 7,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 25,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 65,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Denfert-Rochereau",
+    "latitude": 48.83951187717102,
+    "longitude": 2.3426628112792973,
+    "sizeInMeters": 606,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 6,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 10,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 39,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 45,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Quai de la Tournelle",
+    "latitude": 48.84487825048429,
+    "longitude": 2.353005409240723,
+    "sizeInMeters": 567,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 3,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 14,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 34,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 49,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Jardin des Plantes",
+    "latitude": 48.839864935679124,
+    "longitude": 2.358477115631104,
+    "sizeInMeters": 537,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 6,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 24,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 69,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Glacière",
+    "latitude": 48.83047955490873,
+    "longitude": 2.3477912137647743,
+    "sizeInMeters": 438,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 5,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 28,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 66,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Boulevard de l'Hôpital",
+    "latitude": 48.832796053860534,
+    "longitude": 2.358691723767326,
+    "sizeInMeters": 498,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 4,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 31,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 64,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Avenue d'Italie",
+    "latitude": 48.82246982734541,
+    "longitude": 2.353456020355225,
+    "sizeInMeters": 600,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 0,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 26,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 73,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Tolbiac",
+    "latitude": 48.82487853470683,
+    "longitude": 2.3679614255567665,
+    "sizeInMeters": 594,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 1,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 26,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 72,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  }
+]
