@@ -810,5 +810,285 @@
         "backgroundColor": "#72635d80"
       }
     ]
+  },
+  {
+    "title": "Avenue Hoche",
+    "latitude": 48.87387506305327,
+    "longitude": 2.2998547554016118,
+    "sizeInMeters": 477,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 33,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 38,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 0,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 29,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Champs-Elysées",
+    "latitude": 48.86516648284233,
+    "longitude": 2.3114418983459477,
+    "sizeInMeters": 321,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 75,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 12,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 0,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 13,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Place Royale",
+    "latitude": 48.86954209242675,
+    "longitude": 2.3192095756530766,
+    "sizeInMeters": 552,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 44,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 30,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 0,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 26,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Boulevard Haussman",
+    "latitude": 48.87609070544614,
+    "longitude": 2.316956520080567,
+    "sizeInMeters": 585,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 32,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 36,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 12,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 20,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Monceaux",
+    "latitude": 48.88294885297893,
+    "longitude": 2.299726009368897,
+    "sizeInMeters": 576,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 10,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 25,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 28,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 37,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Batignolles",
+    "latitude": 48.88589791846595,
+    "longitude": 2.313287258148194,
+    "sizeInMeters": 789,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 5,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 10,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 43,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 42,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Porte de Clichy",
+    "latitude": 48.89161203450996,
+    "longitude": 2.3199820518493657,
+    "sizeInMeters": 705,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 7,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 9,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 32,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 52,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Pigalle",
+    "latitude": 48.87830618748304,
+    "longitude": 2.331655025482178,
+    "sizeInMeters": 672,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 12,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 33,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 26,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 29,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Opéra",
+    "latitude": 48.87165929659897,
+    "longitude": 2.331032752990723,
+    "sizeInMeters": 500,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 17,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 37,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 20,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 26,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Clignancourt",
+    "latitude": 48.89104771731203,
+    "longitude": 2.3454093933105473,
+    "sizeInMeters": 996,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 3,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 25,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 71,
+        "backgroundColor": "#72635d80"
+      }
+    ]
   }
 ]

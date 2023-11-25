@@ -5,7 +5,7 @@ import piesData from '../assets/pies.json'
 import { LMap, LTileLayer, LMarker, LIcon, LImageOverlay } from "@vue-leaflet/vue-leaflet";
 import "leaflet/dist/leaflet.css";
 import GeoPie from "./GeoPie.vue";
-import { onMounted, reactive, ref, watch } from "vue";
+import { nextTick, onMounted, reactive, ref, watch } from "vue";
 
 const pies = reactive(piesData)
 console.log("redraw")
@@ -16,10 +16,7 @@ const map = ref(null)
 
 const center = ref(new LatLng(48.8566, 2.3522))
 
-const zoomUpdated = (newZoom) => {
-    const lat = center.value.lat
-    metersPerPx.value = 156543.03392 * Math.cos(lat * Math.PI / 180) / Math.pow(2, newZoom)
-}
+const zoom = ref(12)
 
 
 
@@ -75,7 +72,26 @@ const adjustNextSliceToTotal100 = (selectedPieIndex, dataIndex) => {
     nextSlice.value += valueToAddSoThatTotalIs100
 }
 
+const nearestPieIndex = ref(0)
+
+const onReady = (map) =>{
+    map.on("mousemove" , (e) => {
+        const indexAndDistances = pies.map((pie, index) => {
+            const distance = new LatLng(pie.latitude, pie.longitude).distanceTo(e.latlng)
+            return {index, distance}
+        })
+        const nearestIndex = indexAndDistances.reduce((nearestIndex, current) =>{
+            if(current.distance < nearestIndex.distance){
+                return current
+            }
+            return nearestIndex
+        })
+        nearestPieIndex.value = nearestIndex.index
+    })
+}
+
 const selectedPie = ref(0)
+const showOldMap = ref(true)
 
 </script>
 
@@ -84,17 +100,19 @@ const selectedPie = ref(0)
     <div id="map-container">
         {{ metersPerPx }}
 
-        <l-map ref="map" :zoom="12" v-model:center="center" @update:zoom="zoomUpdated">
+        <l-map ref="map" v-model:zoom="zoom" v-model:center="center" @ready="onReady">
             <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
                 name="OpenStreetMap"></l-tile-layer>
-            <l-image-overlay url="/src/assets/paris_bien_etre_small.jpg" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
+            <l-image-overlay v-if="showOldMap" url="/src/assets/paris_bien_etre.jpg" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <GeoPie v-for="(pie, index) in pies" :key="pie.title" :lat-lng="[pie.latitude, pie.longitude]"
-                :diameter-in-meters="pie.sizeInMeters" :data="pie.data" :meters-per-px="metersPerPx" :id="index"
-                :title="pie.title" @click="selectedPie = index" :draggable="selectedPie === index"
-                @on-position-updated="position => circlePositionUpdated(pie, position)" />
+                :diameter-in-meters="pie.sizeInMeters" :data="pie.data" :zoom-level="zoom" :id="index"
+                :title="pie.title" :draggable="selectedPie === index"
+                @on-position-updated="position => circlePositionUpdated(pie, position)" :z-index-offset="nearestPieIndex===index?9999:0"/>
         </l-map>
     </div>
     <div class="pie-edition-form">
+
+        <input type="checkbox" v-model="showOldMap" />
         <button @click="addPie">Add pie</button>
         <select v-model="selectedPie">
             <option v-for="(pie, index) in pies" :key="pie.title" :value="index">{{ pie.title }}</option>
@@ -121,7 +139,7 @@ const selectedPie = ref(0)
 <style>
 .pie-edition-form {
     display: inline-block;
-
+    margin-top: 50px;
 }
 
 #map-container {

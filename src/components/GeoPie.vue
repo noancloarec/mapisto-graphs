@@ -1,8 +1,7 @@
 <script setup>
-import { defineProps, defineEmits, onMounted, ref, watch } from 'vue'
-import L, { LatLng } from "leaflet";
-import { LMap, LTileLayer, LMarker, LIcon, LImageOverlay } from "@vue-leaflet/vue-leaflet";
+import { LIcon, LMarker } from "@vue-leaflet/vue-leaflet";
 import Chart from 'chart.js/auto';
+import { defineEmits, defineProps, onMounted, ref, watch } from 'vue';
 
 onMounted(() => {
     console.log("mounted")
@@ -11,7 +10,7 @@ onMounted(() => {
     }, 1000)
 })
 
-const props = defineProps(['id', 'lat-lng', 'diameter-in-meters', 'data', 'title', 'meters-per-px', 'draggable'])
+const props = defineProps(['id', 'lat-lng', 'diameter-in-meters', 'data', 'title', 'zoom-level', 'draggable', 'z-index-offset'])
 const emit = defineEmits(['on-position-updated'])
 
 const circlePositionUpdated = (newPosition) => {
@@ -21,14 +20,15 @@ const circlePositionUpdated = (newPosition) => {
 const container = ref(null)
 
 const getCircleSizeInPixels = () => {
-    const size = props.diameterInMeters / props.metersPerPx
+    const metersPerPx = 156543.03392 * Math.cos(props.latLng[0] * Math.PI / 180) / Math.pow(2, props.zoomLevel)
+    const size = props.diameterInMeters / metersPerPx
     return size + 220;
 }
 let chart = undefined
 
 const id = `chart-${props.id}`
 
-const drawChart = () => {
+const drawChart = (zoomChanged) => {
     chart?.destroy()
     chart = new Chart(document.getElementById(id), {
         type: 'pie',
@@ -52,8 +52,8 @@ const drawChart = () => {
                     bottom: 0
                 }
             },
-            animation: {
-                // duration: 0
+            animation: zoomChanged ? {} : {
+                duration: 0
             },
 
             plugins: {
@@ -64,19 +64,36 @@ const drawChart = () => {
         }
     })
 }
+let zoomLevel = props.zoomLevel
+console.log("redraw")
+watch(props, (newVal) => {
+    const zoomChanged = newVal.zoomLevel !== zoomLevel
+    setTimeout(() => {
+        drawChart(zoomChanged)
+    }, 10)
+    zoomLevel = newVal.zoomLevel
 
-watch(props, () => {
+})
+const chim = ref(null)
+const scheduleChartRedraw = () => {
+    console.log("scheduleChartRedraw")
+    console.log(chim.value)
+    const leafletObject = chim.value.leafletObject
+    console.log(leafletObject)
     setTimeout(() => {
         drawChart()
     }, 100)
-})
+}
+
 
 </script>
 
 <template>
-    <l-marker :lat-lng="props.latLng" :draggable="props.draggable" @update:lat-lng="position => circlePositionUpdated(position)">
+    <l-marker ref="chim" :z-index-offset="props.zIndexOffset" :lat-lng="props.latLng" :draggable="props.draggable"
+        @update:lat-lng="position => circlePositionUpdated(position)" @ready="scheduleChartRedraw">
         <l-icon :icon-size="[getCircleSizeInPixels(), getCircleSizeInPixels()]"
-            :icon-anchor="[getCircleSizeInPixels() / 2, getCircleSizeInPixels() / 2]" class-name="someExtraClass">
+            :icon-anchor="[getCircleSizeInPixels() / 2, getCircleSizeInPixels() / 2]" class-name="someExtraClass"
+            @ready="scheduleChartRedraw">
             <div ref="container" class="chart-container">
                 <canvas :id="id"></canvas>
             </div>
