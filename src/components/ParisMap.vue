@@ -7,6 +7,32 @@ import "leaflet/dist/leaflet.css";
 import GeoPie from "./GeoPie.vue";
 import { nextTick, onMounted, reactive, ref, watch } from "vue";
 
+
+const debounce = (fn, delay) => {
+    var timeoutID = null
+    return function () {
+        clearTimeout(timeoutID)
+        var args = arguments
+        var that = this
+        timeoutID = setTimeout(function () {
+            fn.apply(that, args)
+        }, delay)
+    }
+}
+
+const throttle = (callback, limit) => {
+    var waiting = false;                      // Initially, we're not waiting
+    return function () {                      // We return a throttled function
+        if (!waiting) {                       // If we're not waiting
+            callback.apply(this, arguments);  // Execute users function
+            waiting = true;                   // Prevent future invocations
+            setTimeout(function () {          // After a period of time
+                waiting = false;              // And allow future invocations
+            }, limit);
+        }
+    }
+}
+
 const pies = reactive(piesData)
 console.log("redraw")
 
@@ -74,14 +100,15 @@ const adjustNextSliceToTotal100 = (selectedPieIndex, dataIndex) => {
 
 const nearestPieIndex = ref(0)
 
-const onReady = (map) =>{
-    map.on("mousemove" , (e) => {
+const onReady = (map) => {
+    map.on("mousemove", (e) => {
+        console.log("compute nearest pie")
         const indexAndDistances = pies.map((pie, index) => {
             const distance = new LatLng(pie.latitude, pie.longitude).distanceTo(e.latlng)
-            return {index, distance}
+            return { index, distance }
         })
-        const nearestIndex = indexAndDistances.reduce((nearestIndex, current) =>{
-            if(current.distance < nearestIndex.distance){
+        const nearestIndex = indexAndDistances.reduce((nearestIndex, current) => {
+            if (current.distance < nearestIndex.distance) {
                 return current
             }
             return nearestIndex
@@ -103,11 +130,12 @@ const showOldMap = ref(true)
         <l-map ref="map" v-model:zoom="zoom" v-model:center="center" @ready="onReady">
             <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
                 name="OpenStreetMap"></l-tile-layer>
-            <l-image-overlay v-if="showOldMap" url="/src/assets/paris_bien_etre.jpg" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
+            <l-image-overlay v-if="showOldMap" url="/src/assets/paris_bien_etre.jpg"
+                :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <GeoPie v-for="(pie, index) in pies" :key="pie.title" :lat-lng="[pie.latitude, pie.longitude]"
-                :diameter-in-meters="pie.sizeInMeters" :data="pie.data" :zoom-level="zoom" :id="index"
-                :title="pie.title" :draggable="selectedPie === index"
-                @on-position-updated="position => circlePositionUpdated(pie, position)" :z-index-offset="nearestPieIndex===index?9999:0"/>
+                :diameter-in-meters="pie.sizeInMeters" :data="pie.data" :zoom-level="zoom" :id="index" :title="pie.title"
+                :draggable="selectedPie === index" @on-position-updated="position => circlePositionUpdated(pie, position)"
+                :z-index-offset="nearestPieIndex === index ? 9999 : 0" />
         </l-map>
     </div>
     <div class="pie-edition-form">
@@ -122,7 +150,7 @@ const showOldMap = ref(true)
         <input type="text" v-model="pies[selectedPie].title" />
 
         <label> Circle size in meters</label>
-        <input id="size_in_meters" type="number" min="300" max="1000" step="3"
+        <input id="size_in_meters" type="number" min="300" max="2000" step="3"
             v-model.number="pies[selectedPie].sizeInMeters" />
         <output>{{ pies[selectedPie].sizeInMeters }}</output>
         <div v-for="(item, index) in pies[selectedPie].data" :key="item.label">
@@ -145,7 +173,7 @@ const showOldMap = ref(true)
 #map-container {
     display: inline-block;
     height: 80vh;
-    width: 70vw;
+    width: 67vw;
     vertical-align: top;
 }
 
