@@ -1,95 +1,56 @@
 
 <script setup>
-import L, { LatLng } from "leaflet";
-import piesData from '../assets/pies.json'
-import { LMap, LTileLayer, LMarker, LIcon, LImageOverlay } from "@vue-leaflet/vue-leaflet";
+import { LImageOverlay, LMap } from "@vue-leaflet/vue-leaflet";
+import { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { reactive, ref, watch } from "vue";
+import piesData from '../assets/pies.json';
 import GeoPie from "./GeoPie.vue";
-import { nextTick, onMounted, reactive, ref, watch } from "vue";
 
 
-const debounce = (fn, delay) => {
-    var timeoutID = null
-    return function () {
-        clearTimeout(timeoutID)
-        var args = arguments
-        var that = this
-        timeoutID = setTimeout(function () {
-            fn.apply(that, args)
-        }, delay)
-    }
-}
-
-const throttle = (callback, limit) => {
-    var waiting = false;                      // Initially, we're not waiting
-    return function () {                      // We return a throttled function
-        if (!waiting) {                       // If we're not waiting
-            callback.apply(this, arguments);  // Execute users function
-            waiting = true;                   // Prevent future invocations
-            setTimeout(function () {          // After a period of time
-                waiting = false;              // And allow future invocations
-            }, limit);
-        }
-    }
-}
 
 const pies = reactive(piesData)
-console.log("redraw")
 
-const metersPerPx = ref(0)
 
 const map = ref(null)
 
-const center = ref(new LatLng(48.8566, 2.3522))
+const initialCenter = new LatLng(48.8566, 2.3522)
 
-const zoom = ref(12)
+/**
+ * @type {LatLng}
+ * Origin for the pies added by the user, changes as the user moves the map
+ */
+const pieOrigin = ref(initialCenter)
 
+/**
+ * @type {number}
+ * Initial zoom level for the map
+ */
+const initialZoom = 13
 
-
-const circlePositionUpdated = (pie, newPosition) => {
+/**
+ * Set a new position for a pie
+ * @param {Object} pie the pie to update
+ * @param {LatLng} newPosition the new position for the pie
+ */
+const setPiePosition = (pie, newPosition) => {
     pie.latitude = newPosition.lat
     pie.longitude = newPosition.lng
 }
 
-watch(pies, (newVal) => {
-    console.log("pies update", newVal)
-})
-
-const selectPie = (index) => {
-    selectedPie.value = index
-}
-
-const addPie = () => {
-    pies.push({
-        title: "Quartier",
-        latitude: center.value.lat,
-        longitude: center.value.lng,
-        sizeInMeters: 500,
-        data: [
-            {
-                label: "At least 1 male and 1 female",
-                value: 1,
-                backgroundColor: "#cc766e80"
-            },
-            {
-                label: "At least 1 female",
-                value: 4,
-                backgroundColor: "#7b968780"
-            },
-            {
-                label: "No domestic - Boss or employee",
-                value: 26,
-                backgroundColor: "#d9ae3c80"
-            },
-            {
-                label: "No domestic - Worker",
-                value: 69,
-                backgroundColor: "#72635d80"
-            }
-        ]
-    })
+/**
+ * Add a new pie to the map that will have the sames slices as the last one, and select it
+ */
+const addPieAndSelectIt = () => {
+    pies.push({ ...pies[pies.length - 1], title: "Quartier", latitude: pieOrigin.value.lat, longitude: pieOrigin.value.lng })
     selectedPie.value = pies.length - 1;
 }
+
+/**
+ * When a slice is updated, adjust the next slice so that the total is 100
+ * @param {Number} selectedPieIndex 
+ * @param {Number} dataIndex 
+ */
 const adjustNextSliceToTotal100 = (selectedPieIndex, dataIndex) => {
     const pie = pies[selectedPieIndex]
     const dataSumInPie = pie.data.reduce((acc, item) => acc + item.value, 0)
@@ -97,12 +58,19 @@ const adjustNextSliceToTotal100 = (selectedPieIndex, dataIndex) => {
     const nextSlice = pie.data[(dataIndex + 1) % pie.data.length]
     nextSlice.value += valueToAddSoThatTotalIs100
 }
-
+/**
+ * @type {number}
+ * Index of the pie that is the nearest to the mouse cursor
+ */
 const nearestPieIndex = ref(0)
 
-const onReady = (map) => {
+/**
+ * Adjusts the nearestPieIndex to the pie that is the nearest to the mouse cursor
+ * So the pie that is the nearest to the mouse cursor is always on top
+ * @param {LMap} map 
+ */
+const followMouseMove = (map) => {
     map.on("mousemove", (e) => {
-        console.log("compute nearest pie")
         const indexAndDistances = pies.map((pie, index) => {
             const distance = new LatLng(pie.latitude, pie.longitude).distanceTo(e.latlng)
             return { index, distance }
@@ -116,32 +84,43 @@ const onReady = (map) => {
         nearestPieIndex.value = nearestIndex.index
     })
 }
-
+/**
+ * @type {number}
+ * Index of the pie that is currently selected
+ */
 const selectedPie = ref(0)
+/**
+ * @type {boolean}
+ * Whether to show the old map or not
+ */
 const showOldMap = ref(true)
+/**
+ * @type {number}
+ * Zoom outputted from leaflet, to adjust pie size
+ */
+const zoomOnMap = ref(initialZoom)
 
 </script>
 
 <template>
-    <!-- <img src="src/assets/paris_bien_etre.jpg" /> -->
     <div id="map-container">
-        {{ metersPerPx }}
-
-        <l-map ref="map" v-model:zoom="zoom" v-model:center="center" @ready="onReady">
-            <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
-                name="OpenStreetMap"></l-tile-layer>
-            <l-image-overlay v-if="showOldMap" url="/src/assets/paris_bien_etre.jpg"
+        <l-map ref="map" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
+            :center="initialCenter" @ready="followMouseMove" :max-zoom="18">
+            <!-- <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
+                            name="OpenStreetMap"></l-tile-layer>  -->
+            <l-image-overlay v-if="showOldMap" url="/src/assets/paris_bien_etre_small.jpg"
                 :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <GeoPie v-for="(pie, index) in pies" :key="pie.title" :lat-lng="[pie.latitude, pie.longitude]"
-                :diameter-in-meters="pie.sizeInMeters" :data="pie.data" :zoom-level="zoom" :id="index" :title="pie.title"
-                :draggable="selectedPie === index" @on-position-updated="position => circlePositionUpdated(pie, position)"
+                :diameter-in-meters="pie.sizeInMeters" :data="pie.data" :zoom-level="zoomOnMap" :id="index"
+                :title="pie.title" :draggable="selectedPie === index"
+                @on-position-updated="position => setPiePosition(pie, position)"
                 :z-index-offset="nearestPieIndex === index ? 9999 : 0" />
         </l-map>
     </div>
     <div class="pie-edition-form">
 
         <input type="checkbox" v-model="showOldMap" />
-        <button @click="addPie">Add pie</button>
+        <button @click="addPieAndSelectIt">Add pie</button>
         <select v-model="selectedPie">
             <option v-for="(pie, index) in pies" :key="pie.title" :value="index">{{ pie.title }}</option>
         </select>
@@ -160,7 +139,7 @@ const showOldMap = ref(true)
                 @change="() => adjustNextSliceToTotal100(selectedPie, index)" />
             <output>{{ item.value }}</output>
         </div>
-        <textarea>{{ pies }}</textarea>
+        <textarea :value="JSON.stringify(pies)"></textarea>
     </div>
 </template>
 
@@ -172,8 +151,8 @@ const showOldMap = ref(true)
 
 #map-container {
     display: inline-block;
-    height: 80vh;
-    width: 67vw;
+    height: 100vh;
+    width: 100vw;
     vertical-align: top;
 }
 

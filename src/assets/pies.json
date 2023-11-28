@@ -2157,8 +2157,8 @@
   },
   {
     "title": "Nation",
-    "latitude": 48.85014524214815,
-    "longitude": 2.392079818054849,
+    "latitude": 48.85025819670402,
+    "longitude": 2.392058372497559,
     "sizeInMeters": 696,
     "data": [
       {
@@ -2179,6 +2179,62 @@
       {
         "label": "No domestic - Worker",
         "value": 72,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Fontarabie",
+    "latitude": 48.85486103178371,
+    "longitude": 2.4067354202270512,
+    "sizeInMeters": 612,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 1,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 3,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 22,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 74,
+        "backgroundColor": "#72635d80"
+      }
+    ]
+  },
+  {
+    "title": "Saint Fargeau",
+    "latitude": 48.87113696126375,
+    "longitude": 2.404160438998688,
+    "sizeInMeters": 357,
+    "data": [
+      {
+        "label": "At least 1 male and 1 female",
+        "value": 0,
+        "backgroundColor": "#cc766e80"
+      },
+      {
+        "label": "At least 1 female",
+        "value": 3,
+        "backgroundColor": "#7b968780"
+      },
+      {
+        "label": "No domestic - Boss or employee",
+        "value": 34,
+        "backgroundColor": "#d9ae3c80"
+      },
+      {
+        "label": "No domestic - Worker",
+        "value": 63,
         "backgroundColor": "#72635d80"
       }
     ]
