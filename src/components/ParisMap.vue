@@ -8,7 +8,7 @@ import { onMounted, reactive, ref, watch } from "vue";
 import piesData from '../assets/pies.json';
 import GeoPie from "./GeoPie.vue";
 import paris_map from '../assets/paris_bien_etre.jpg';
-import Chart from 'chart.js/auto';
+import { nextTick } from "vue";
 
 const pies = reactive(piesData)
 
@@ -79,6 +79,46 @@ const determinePiesToDisplay = (waitInMs) => {
 
 const zooming = ref(false)
 
+const risePointedChartToTop = (e, reTriggerMouseMove) => {
+    /**
+     * Compute nearest pie to make it rise on to so it is not hidden behind overlapping pies
+     */
+    const indexAndDistances = pies.map((pie, index) => {
+        const distance = new LatLng(pie.latitude, pie.longitude).distanceTo(e.latlng)
+        return { index, distance }
+    })
+    const nearestIndex = indexAndDistances.reduce((nearestIndex, current) => {
+        if (current.distance < nearestIndex.distance) {
+            return current
+        }
+        return nearestIndex
+    })
+    const indexChanged = nearestIndex.index !== nearestPieIndex.value
+    nearestPieIndex.value = nearestIndex.index
+
+
+    if (reTriggerMouseMove && indexChanged) {
+        /**
+         * If the pie has been rised up, retrigger the mousemove to display the tooltip
+         */
+        const target = e.originalEvent.target
+        setTimeout(() => {
+            const newEvent = new MouseEvent("mousemove", {
+                target: target,
+                clientX: e.originalEvent.clientX + 1,
+                clientY: e.originalEvent.clientY + 1,
+                screenX: e.originalEvent.screenX + 1,
+                screenY: e.originalEvent.screenY + 1,
+            })
+            const targetElement = document.elementFromPoint(newEvent.clientX, newEvent.clientY)
+            targetElement.dispatchEvent(newEvent);
+            setTimeout(() => {
+                targetElement.dispatchEvent(newEvent)
+            })
+        }, 50)
+    }
+}
+
 /**
  * Adjusts the nearestPieIndex to the pie that is the nearest to the mouse cursor
  * So the pie that is the nearest to the mouse cursor is always on top
@@ -86,35 +126,10 @@ const zooming = ref(false)
  */
 const onMapReady = (map) => {
     determinePiesToDisplay(0)
-    map.on("mousemove", (e) => {
-        const indexAndDistances = pies.map((pie, index) => {
-            const distance = new LatLng(pie.latitude, pie.longitude).distanceTo(e.latlng)
-            return { index, distance }
-        })
-        const nearestIndex = indexAndDistances.reduce((nearestIndex, current) => {
-            if (current.distance < nearestIndex.distance) {
-                return current
-            }
-            return nearestIndex
-        })
-        nearestPieIndex.value = nearestIndex.index
-        // setTimeout(() => {
-        //     console.log("old event", e)
-        //     const newEvent = new Event("click")
-        //     console.log("newEvent", newEvent)
-        //     console.log("mapElement", mapElement.value)
-        //     map.fire("click", { latlng: e.latlng,  }, true)
-        // }, 1000)
-        // console.log({ nearestIndex, nearestPieIndex: nearestPieIndex.value })
-    })
-    map.on("click", (e) => {
-        console.log("click", e)
-        console.log(map.getZoom())
-    })
+    map.on("click", (e) => risePointedChartToTop(e, true))
+    map.on("mousemove", (e) => risePointedChartToTop(e, false))
     map.on("moveend", () => determinePiesToDisplay(0))
     map.on("zoomend", () => determinePiesToDisplay(1000))
-    map.on("zoomstart", () => zooming.value = true)
-    map.on("zoomend", () => zooming.value = false)
     leafletMap.value = map
 
 }
@@ -146,17 +161,16 @@ const zoomOnMap = ref(initialZoom)
     <div id="map-container">
         <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
-            <l-tile-layer
-                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
-                attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
-                name="OpenStreetMap"></l-tile-layer>
+            <!-- <l-tile-layer
+                                                                                                                                                                                                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
+                                                                                                                                                                                                attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
+                                                                                                                                                                                                name="OpenStreetMap"></l-tile-layer> -->
             <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
                     <GeoPie v-if="pie.shouldBeDisplayed" :data="pie.data" :title="pie.title" :parent-map="leafletMap"
-                        :lat-lng="[pie.latitude, pie.longitude]" :zoomLevel="zoomOnMap"
-                        :diameter-in-meters="pie.sizeInMeters" :show-on-top="nearestPieIndex === index"
-                        :zooming="zooming" />
+                        :lat-lng="[pie.latitude, pie.longitude]" :diameter-in-meters="pie.sizeInMeters"
+                        :show-on-top="nearestPieIndex === index" />
                 </div>
             </div>
             <div class="legend-panel-container">

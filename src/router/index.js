@@ -7,12 +7,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      redirect: '/paris-bien-etre-1886'
     },
     {
-      path: '/map',
-      name: 'map',
+      path: '/paris-bien-etre-1886',
+      name: 'paris-bien-etre-1886',
       component: ParisMap
     },
     {

@@ -3,16 +3,12 @@ import Chart from 'chart.js/auto';
 import { LatLng, Map, Point, map } from "leaflet";
 import { computed, defineEmits, defineProps, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import Lmap from "leaflet"
+import { nextTick } from 'vue';
+import { onUnmounted } from 'vue';
 
 
 const props = defineProps({
-    /**
-     * Identifier for the pie, for technical purposes
-     */
-    // id: {
-    //     type: [String, Number],
-    //     required: true
-    // },
     /**
      * Latitude and longitude of the center of the pie
      */
@@ -44,57 +40,34 @@ const props = defineProps({
         required: false
     },
     /**
-     * Zoom level of the containing map
+     * A link to the parent map
+     * @type {Lmap}
      */
-    zoomLevel: {
-        type: Number,
-        required: true
-    },
-    /**
-     * Whether the pie can be dragged by the user
-     */
-    // draggable: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    /**
-     * Z index offset of the pie.
-     * Useful to make the canvas appear on top of potential overlapping canvases
-     */
-    // zIndexOffset: {
-    //     type: Number,
-    //     required: true
-    // },
     parentMap: {
         type: Map,
         required: true,
     },
+    /**
+     * Whether the pie should be displayed on top of other elements
+     */
     showOnTop: {
         type: Boolean,
         required: false,
     },
-    zooming: {
-        type: Boolean,
-        required: false,
-    }
 })
 
 const { t } = useI18n()
 
 /**
- * Event emitted when the user drags the pie
+ * Whether the parent map is zooming or not
  */
-defineEmits(['onPositionUpdated'])
-
-// const latLng = new LatLng(props.latLng[0], props.latLng[1])
+const parentMapIsZooming = ref(false)
 
 /**
- * Computes the size of the pie in pixels, based on the zoom level of the map
-//  * @see https://gis.stackexchange.com/questions/7430/what-ratio-scales-do-google-maps-zoom-levels-correspond-to
- * @returns 
+ * Computes the size of the pie in pixels, plus the padding, based on the zoom level of the map
+ * @see https://gis.stackexchange.com/questions/7430/what-ratio-scales-do-google-maps-zoom-levels-correspond-to
+ * @returns {number}
  */
-
-
 const getCircleSizeInPixels = () => {
     const metersPerPx = 156543.03392 * Math.cos(props.latLng[0] * Math.PI / 180) / Math.pow(2, props.parentMap.getZoom())
     const size = Math.round(props.diameterInMeters / metersPerPx)
@@ -106,7 +79,6 @@ const getCircleSizeInPixels = () => {
 const circleSizeInPixels = ref(getCircleSizeInPixels())
 
 
-// let chart = undefined
 const pie = ref(null)
 /**
  * Draws the pie chart
@@ -115,7 +87,7 @@ const drawChart = () => {
     const dest = pie.value.getContext('2d')
 
 
-    new Chart(dest, {
+    const chart = new Chart(dest, {
         type: 'pie',
         data: {
             labels: props.data.map((item) => t(item.label)),
@@ -154,34 +126,41 @@ const drawChart = () => {
             },
         }
     });
+
+    // props.parentMap.on("click", (e) => {
+    //     console.log("parent map click")
+    //     console.log(chart.getElementsAtEventForMode(e.originalEvent, "nearest", { intersect: true }, true))
+    // })
 }
-/**
- * Redraws the pie when props are updated to match the new zoom level
- * We should not have to do that but vue-leaflet destroys the canvas whenever props change
- */
-const adaptPieSizeAndPosition = () => {
-    position.value = props.parentMap.latLngToContainerPoint(props.latLng)
-    circleSizeInPixels.value = getCircleSizeInPixels()
-}
+
 const position = ref(
     props.parentMap.latLngToContainerPoint(props.latLng)
 )
 
 const chartContainer = ref(null)
-const mapBeingDragged = ref(false)
-onMounted(() => {
 
+const onZoomStart = () => parentMapIsZooming.value = true
+const onZoomEnd = () => {
+    circleSizeInPixels.value = getCircleSizeInPixels()
+    parentMapIsZooming.value = false
+}
+const onMove = () => {
+    position.value = props.parentMap.latLngToContainerPoint(props.latLng)
+}
+
+onMounted(() => {
+    props.parentMap.on("zoomstart", onZoomStart)
+    props.parentMap.on("zoomend", onZoomEnd)
     drawChart()
-    props.parentMap.on("movestart", () => mapBeingDragged.value = true)
-    props.parentMap.on("move", (e) => {
-        adaptPieSizeAndPosition()
-    })
-    props.parentMap.on("moveend", () => {
-        mapBeingDragged.value = false
-    })
+    props.parentMap.on("move", onMove)
 })
 
+onUnmounted(() => {
+    props.parentMap.off("zoomstart", onZoomStart)
+    props.parentMap.off("zoomend", onZoomEnd)
+    props.parentMap.off("move", onMove)
 
+})
 
 </script>
 
@@ -191,7 +170,7 @@ onMounted(() => {
         height: circleSizeInPixels + 'px',
         top: position.y - circleSizeInPixels / 2 + 'px',
         left: position.x - circleSizeInPixels / 2 + 'px',
-    }" :class="{ 'do-not-transition': mapBeingDragged, 'show-on-top': showOnTop, 'fade-during-zoom': zooming }">
+    }" :class="{ 'show-on-top': showOnTop, 'faded-out': parentMapIsZooming }">
         <canvas ref="pie"></canvas>
     </div>
 </template>
@@ -200,20 +179,19 @@ onMounted(() => {
 .chart-container {
     position: absolute;
     z-index: 1000;
+    transition-delay: 0.5s;
     transition: opacity 0.5s;
     opacity: 1;
-    ;
 }
 
-.chart-container.do-not-transition {
-    transition: none;
-}
 
 .chart-container.show-on-top {
     z-index: 1001;
 }
 
-.chart-container.fade-during-zoom {
+.chart-container.faded-out {
+    transition: opacity 0s;
+    transition-delay: 0s;
     opacity: 0;
 }
 </style>
