@@ -25,11 +25,23 @@ console.log("initialCenter", initialCenter)
  */
 const pieOrigin = ref(initialCenter)
 
+const computeZoomLevelBasedOnScreenSize = () => {
+    const width = window.innerWidth
+    if (width > 1000) {
+        return 13
+    } else if (width > 600) {
+        return 12
+    } else {
+        return 11
+    }
+}
+
 /**
  * @type {number}
  * Initial zoom level for the map
  */
-const initialZoom = 13
+const initialZoom = computeZoomLevelBasedOnScreenSize()
+console.log("initialZoom", initialZoom)
 
 /**
  * Set a new position for a pie
@@ -162,9 +174,9 @@ const zoomOnMap = ref(initialZoom)
         <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
             <!-- <l-tile-layer
-                                                                                                                                                                                                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
-                                                                                                                                                                                                    attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
-                                                                                                                                                                                                    name="OpenStreetMap"></l-tile-layer> -->
+                                                                                                                                                                                                                                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
+                                                                                                                                                                                                                                    attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
+                                                                                                                                                                                                                                    name="OpenStreetMap"></l-tile-layer> -->
             <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
