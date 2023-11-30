@@ -102,20 +102,34 @@ const drawChart = () => {
         options: {
             tooltipTemplate: "<%= value %> Files",
             rotation: 180,
+            interaction: {
+                mode: 'dataset'
+            },
+            tooltips: {
+                mode: 'index'
+            },
             plugins: {
                 legend: {
                     display: false
                 },
                 tooltip: {
-
                     callbacks: {
-                        title: (items) => {
-                            return items[0].dataset.label
+                        label: ({ label, formattedValue }) => {
+                            return `${label}: ${formattedValue}%`
                         },
-                        label: (item) => {
-                            return `${item.label}: ${item.formattedValue} %`
+                        labelColor: ({ dataIndex, dataset }) => {
+                            const color = dataset.backgroundColor[dataIndex]
+                            const colorIsHexa = color.startsWith("#")
+                            const colorHasTransparency = color.length === 9
+                            if (colorIsHexa && colorHasTransparency) {
+                                const res = color.substring(0, 7)
+                                return {
+                                    backgroundColor: res,
+                                };
+
+                            }
                         }
-                    },
+                    }
                 }
             },
             animation: {
@@ -126,11 +140,6 @@ const drawChart = () => {
             },
         }
     });
-
-    // props.parentMap.on("click", (e) => {
-    //     console.log("parent map click")
-    //     console.log(chart.getElementsAtEventForMode(e.originalEvent, "nearest", { intersect: true }, true))
-    // })
 }
 
 const position = ref(

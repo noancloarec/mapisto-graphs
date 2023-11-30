@@ -162,9 +162,9 @@ const zoomOnMap = ref(initialZoom)
         <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
             <!-- <l-tile-layer
-                                                                                                                                                                                                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
-                                                                                                                                                                                                attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
-                                                                                                                                                                                                name="OpenStreetMap"></l-tile-layer> -->
+                                                                                                                                                                                                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
+                                                                                                                                                                                                    attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
+                                                                                                                                                                                                    name="OpenStreetMap"></l-tile-layer> -->
             <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
@@ -237,6 +237,7 @@ const zoomOnMap = ref(initialZoom)
 .legend-panel-container {
     position: absolute;
     width: 400px;
+    max-width: 100%;
     bottom: 0;
     left: 0;
     z-index: 10000;
