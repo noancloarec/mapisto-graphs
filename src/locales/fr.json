@@ -1,7 +1,7 @@
 {
     "legends": {
-        "at_least_1_male_and_1_female": "Ménage avec au moins 1 homme et 1 femme",
-        "a_least_1_female": "Ménage avec au moins 1 femme",
+        "at_least_1_male_and_1_female": "Ménage avec au moins 1 homme et 1 femme domestiques",
+        "a_least_1_female": "Ménage avec au moins 1 femme domestique",
         "workers_no_domestic": "Ménage ouvrier sans domestique",
         "boss_or_employee_no_domestic": "Ménage de patron ou d'employé sans domestique"
     },

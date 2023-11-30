@@ -16,7 +16,7 @@ console.log(navigator.languages)
 
 const mapElement = ref(null)
 
-const initialCenter = new LatLng(48.8566, 2.3522)
+const initialCenter = new LatLng(48.8581451743888, 2.315702514296674)
 console.log("initialCenter", initialCenter)
 
 /**
@@ -107,6 +107,10 @@ const onMapReady = (map) => {
         // }, 1000)
         // console.log({ nearestIndex, nearestPieIndex: nearestPieIndex.value })
     })
+    map.on("click", (e) => {
+        console.log("click", e)
+        console.log(map.getZoom())
+    })
     map.on("moveend", () => determinePiesToDisplay(0))
     map.on("zoomend", () => determinePiesToDisplay(1000))
     map.on("zoomstart", () => zooming.value = true)
@@ -142,8 +146,10 @@ const zoomOnMap = ref(initialZoom)
     <div id="map-container">
         <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
-            <!-- <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
-                                                                                                                                                                                                                                                                                                                                                                name="OpenStreetMap"></l-tile-layer> -->
+            <l-tile-layer
+                url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
+                attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
+                name="OpenStreetMap"></l-tile-layer>
             <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
@@ -204,7 +210,7 @@ const zoomOnMap = ref(initialZoom)
 
 #map-container {
     display: inline-block;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     max-width: 100%;
     vertical-align: top;

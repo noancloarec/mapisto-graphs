@@ -98,7 +98,7 @@ defineEmits(['onPositionUpdated'])
 const getCircleSizeInPixels = () => {
     const metersPerPx = 156543.03392 * Math.cos(props.latLng[0] * Math.PI / 180) / Math.pow(2, props.parentMap.getZoom())
     const size = Math.round(props.diameterInMeters / metersPerPx)
-    return size + 300;
+    return size + 330;
 }
 /**
  * Current circle size in pixels
@@ -128,17 +128,29 @@ const drawChart = () => {
             }],
         },
         options: {
+            tooltipTemplate: "<%= value %> Files",
             rotation: 180,
             plugins: {
                 legend: {
                     display: false
                 },
+                tooltip: {
+
+                    callbacks: {
+                        title: (items) => {
+                            return items[0].dataset.label
+                        },
+                        label: (item) => {
+                            return `${item.label}: ${item.formattedValue} %`
+                        }
+                    },
+                }
             },
             animation: {
                 duration: 0
             },
             layout: {
-                padding: 150
+                padding: 165
             },
         }
     });
@@ -179,7 +191,6 @@ onMounted(() => {
         height: circleSizeInPixels + 'px',
         top: position.y - circleSizeInPixels / 2 + 'px',
         left: position.x - circleSizeInPixels / 2 + 'px',
-        transition: mapBeingDragged ? 'none' : 'all 0.2s',
     }" :class="{ 'do-not-transition': mapBeingDragged, 'show-on-top': showOnTop, 'fade-during-zoom': zooming }">
         <canvas ref="pie"></canvas>
     </div>
@@ -189,7 +200,8 @@ onMounted(() => {
 .chart-container {
     position: absolute;
     z-index: 1000;
-    transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s, opacity 0.2s;
+    transition: opacity 0.5s;
+    opacity: 1;
     ;
 }
 
@@ -202,7 +214,7 @@ onMounted(() => {
 }
 
 .chart-container.fade-during-zoom {
-    opacity: 0.1;
+    opacity: 0;
 }
 </style>
 ```
