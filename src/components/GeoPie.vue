@@ -2,6 +2,7 @@
 import Chart from 'chart.js/auto';
 import { LatLng, Map, Point, map } from "leaflet";
 import { computed, defineEmits, defineProps, onMounted, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 
 const props = defineProps({
@@ -78,6 +79,8 @@ const props = defineProps({
     }
 })
 
+const { t } = useI18n()
+
 /**
  * Event emitted when the user drags the pie
  */
@@ -95,7 +98,7 @@ defineEmits(['onPositionUpdated'])
 const getCircleSizeInPixels = () => {
     const metersPerPx = 156543.03392 * Math.cos(props.latLng[0] * Math.PI / 180) / Math.pow(2, props.parentMap.getZoom())
     const size = Math.round(props.diameterInMeters / metersPerPx)
-    return size + 220;
+    return size + 300;
 }
 /**
  * Current circle size in pixels
@@ -115,7 +118,7 @@ const drawChart = () => {
     new Chart(dest, {
         type: 'pie',
         data: {
-            labels: props.data.map((item) => item.label),
+            labels: props.data.map((item) => t(item.label)),
             datasets: [{
                 label: props.title,
                 data: props.data.map((item) => item.value),
@@ -135,7 +138,7 @@ const drawChart = () => {
                 duration: 0
             },
             layout: {
-                padding: 110
+                padding: 150
             },
         }
     });

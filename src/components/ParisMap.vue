@@ -1,5 +1,6 @@
 
 <script setup>
+
 import { LImageOverlay, LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -9,9 +10,9 @@ import GeoPie from "./GeoPie.vue";
 import paris_map from '../assets/paris_bien_etre.jpg';
 import Chart from 'chart.js/auto';
 
-
 const pies = reactive(piesData)
 
+console.log(navigator.languages)
 
 const mapElement = ref(null)
 
@@ -142,7 +143,7 @@ const zoomOnMap = ref(initialZoom)
         <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
             <!-- <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
-                                                                                                                                                                                                                                                                                        name="OpenStreetMap"></l-tile-layer> -->
+                                                                                                                                                                                                                                                                                                                                                                name="OpenStreetMap"></l-tile-layer> -->
             <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
@@ -154,12 +155,11 @@ const zoomOnMap = ref(initialZoom)
             </div>
             <div class="legend-panel-container">
                 <div class="legend-panel">
-                    <h1>Evaluation du degré de bien-être de la population par quartier d'après le nombre des domestiques
-                    </h1>
+                    <h1>{{ $t("chart_titles.well_being_evaluation_by_number_of_domestic") }}</h1>
                     <div class="legend">
                         <div v-for="d in pies[0].data" :key="d.label" class="legend-row">
                             <div class="legend-color" :style="{ backgroundColor: d.backgroundColor }"></div>
-                            <p class="legend-label">{{ d.label }}</p>
+                            <p class="legend-label">{{ $t(d.label) }}</p>
                         </div>
                     </div>
                 </div>

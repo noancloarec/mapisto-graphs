@@ -1,0 +1,11 @@
+{
+    "legends": {
+        "at_least_1_male_and_1_female": "Household with at least 1 male and 1 female domestics",
+        "a_least_1_female": "Household with at least 1 female domestic",
+        "workers_no_domestic": "Worker household without domestic help",
+        "boss_or_employee_no_domestic": "Boss or employee household without domestic help"
+    },
+    "chart_titles": {
+        "well_being_evaluation_by_number_of_domestic": "Population well-being evaluation by neighborhood based on the number of domestics"
+    }
+}

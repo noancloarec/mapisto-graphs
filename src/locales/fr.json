@@ -1,0 +1,11 @@
+{
+    "legends": {
+        "at_least_1_male_and_1_female": "Ménage avec au moins 1 homme et 1 femme",
+        "a_least_1_female": "Ménage avec au moins 1 femme",
+        "workers_no_domestic": "Ménage ouvrier sans domestique",
+        "boss_or_employee_no_domestic": "Ménage de patron ou d'employé sans domestique"
+    },
+    "chart_titles": {
+        "well_being_evaluation_by_number_of_domestic": "Évaluation du degré de bien être de la population par quartier d'après le nombre de domestiques"
+    }
+}

@@ -6,22 +6,22 @@
     "title": "Les Ternes",
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 4,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 32,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 25,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 39,
         "backgroundColor": "#72635d80"
       }
@@ -34,22 +34,22 @@
     "title": "Victor Hugo",
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 22,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 25,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 7,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 46,
         "backgroundColor": "#72635d80"
       }
@@ -62,22 +62,22 @@
     "sizeInMeters": 486,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 7,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 30,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 26,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 37,
         "backgroundColor": "#72635d80"
       }
@@ -90,22 +90,22 @@
     "sizeInMeters": 357,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 10,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 31,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 23,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 36,
         "backgroundColor": "#72635d80"
       }
@@ -118,22 +118,22 @@
     "sizeInMeters": 411,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 9,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 20,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 24,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 47,
         "backgroundColor": "#72635d80"
       }
@@ -146,22 +146,22 @@
     "sizeInMeters": 453,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 0,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 20,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 77,
         "backgroundColor": "#72635d80"
       }
@@ -174,22 +174,22 @@
     "sizeInMeters": 654,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 26,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 69,
         "backgroundColor": "#72635d80"
       }
@@ -202,22 +202,22 @@
     "sizeInMeters": 585,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 12,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 32,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 53,
         "backgroundColor": "#72635d80"
       }
@@ -230,22 +230,22 @@
     "sizeInMeters": 417,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 6,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 17,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 50,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 27,
         "backgroundColor": "#72635d80"
       }
@@ -258,22 +258,22 @@
     "sizeInMeters": 519,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 8,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 29,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 62,
         "backgroundColor": "#72635d80"
       }
@@ -286,22 +286,22 @@
     "sizeInMeters": 651,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 30,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 65,
         "backgroundColor": "#72635d80"
       }
@@ -314,22 +314,22 @@
     "sizeInMeters": 729,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 35,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 59,
         "backgroundColor": "#72635d80"
       }
@@ -342,22 +342,22 @@
     "sizeInMeters": 516,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 12,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 41,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 44,
         "backgroundColor": "#72635d80"
       }
@@ -370,22 +370,22 @@
     "sizeInMeters": 300,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 29,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 66,
         "backgroundColor": "#72635d80"
       }
@@ -398,22 +398,22 @@
     "sizeInMeters": 500,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 4,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 7,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 36,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 53,
         "backgroundColor": "#72635d80"
       }
@@ -426,22 +426,22 @@
     "sizeInMeters": 678,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 5,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 23,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 36,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 36,
         "backgroundColor": "#72635d80"
       }
@@ -454,22 +454,22 @@
     "sizeInMeters": 519,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 6,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 33,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 30,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 31,
         "backgroundColor": "#72635d80"
       }
@@ -482,22 +482,22 @@
     "sizeInMeters": 354,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 50,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 16,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 30,
         "backgroundColor": "#72635d80"
       }
@@ -510,22 +510,22 @@
     "sizeInMeters": 528,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 18,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 35,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 16,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 31,
         "backgroundColor": "#72635d80"
       }
@@ -538,22 +538,22 @@
     "sizeInMeters": 459,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 6,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 37,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 13,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 44,
         "backgroundColor": "#72635d80"
       }
@@ -566,22 +566,22 @@
     "sizeInMeters": 486,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 13,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 23,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 27,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 37,
         "backgroundColor": "#72635d80"
       }
@@ -594,22 +594,22 @@
     "sizeInMeters": 639,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 7,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 25,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 65,
         "backgroundColor": "#72635d80"
       }
@@ -622,22 +622,22 @@
     "sizeInMeters": 606,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 6,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 10,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 39,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 45,
         "backgroundColor": "#72635d80"
       }
@@ -650,22 +650,22 @@
     "sizeInMeters": 567,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 14,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 34,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 49,
         "backgroundColor": "#72635d80"
       }
@@ -678,22 +678,22 @@
     "sizeInMeters": 537,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 6,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 24,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 69,
         "backgroundColor": "#72635d80"
       }
@@ -706,22 +706,22 @@
     "sizeInMeters": 438,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 5,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 28,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 66,
         "backgroundColor": "#72635d80"
       }
@@ -734,22 +734,22 @@
     "sizeInMeters": 498,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 31,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 64,
         "backgroundColor": "#72635d80"
       }
@@ -762,22 +762,22 @@
     "sizeInMeters": 600,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 0,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 26,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 73,
         "backgroundColor": "#72635d80"
       }
@@ -790,22 +790,22 @@
     "sizeInMeters": 594,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 1,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 26,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 72,
         "backgroundColor": "#72635d80"
       }
@@ -818,22 +818,22 @@
     "sizeInMeters": 477,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 33,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 38,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 0,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 29,
         "backgroundColor": "#72635d80"
       }
@@ -846,22 +846,22 @@
     "sizeInMeters": 321,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 75,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 12,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 0,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 13,
         "backgroundColor": "#72635d80"
       }
@@ -874,22 +874,22 @@
     "sizeInMeters": 552,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 44,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 30,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 0,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 26,
         "backgroundColor": "#72635d80"
       }
@@ -902,22 +902,22 @@
     "sizeInMeters": 585,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 32,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 36,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 12,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 20,
         "backgroundColor": "#72635d80"
       }
@@ -930,22 +930,22 @@
     "sizeInMeters": 576,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 10,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 25,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 28,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 37,
         "backgroundColor": "#72635d80"
       }
@@ -958,22 +958,22 @@
     "sizeInMeters": 789,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 5,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 10,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 43,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 42,
         "backgroundColor": "#72635d80"
       }
@@ -986,22 +986,22 @@
     "sizeInMeters": 705,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 7,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 9,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 32,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 52,
         "backgroundColor": "#72635d80"
       }
@@ -1014,22 +1014,22 @@
     "sizeInMeters": 672,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 12,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 33,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 26,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 29,
         "backgroundColor": "#72635d80"
       }
@@ -1042,22 +1042,22 @@
     "sizeInMeters": 500,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 17,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 37,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 20,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 26,
         "backgroundColor": "#72635d80"
       }
@@ -1070,22 +1070,22 @@
     "sizeInMeters": 1014,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 25,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 71,
         "backgroundColor": "#72635d80"
       }
@@ -1098,22 +1098,22 @@
     "sizeInMeters": 753,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 5,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 21,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 73,
         "backgroundColor": "#72635d80"
       }
@@ -1126,22 +1126,22 @@
     "sizeInMeters": 438,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 20,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 6,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 42,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 32,
         "backgroundColor": "#72635d80"
       }
@@ -1154,22 +1154,22 @@
     "sizeInMeters": 330,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 6,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 17,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 36,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 41,
         "backgroundColor": "#72635d80"
       }
@@ -1182,22 +1182,22 @@
     "sizeInMeters": 450,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 10,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 16,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 42,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 32,
         "backgroundColor": "#72635d80"
       }
@@ -1210,22 +1210,22 @@
     "sizeInMeters": 324,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 17,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 32,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 31,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 20,
         "backgroundColor": "#72635d80"
       }
@@ -1238,22 +1238,22 @@
     "sizeInMeters": 408,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 32,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 35,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 30,
         "backgroundColor": "#72635d80"
       }
@@ -1266,22 +1266,22 @@
     "sizeInMeters": 702,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 23,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 39,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 35,
         "backgroundColor": "#72635d80"
       }
@@ -1294,22 +1294,22 @@
     "sizeInMeters": 735,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 1,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 30,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 68,
         "backgroundColor": "#72635d80"
       }
@@ -1322,22 +1322,22 @@
     "sizeInMeters": 513,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 9,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 23,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 67,
         "backgroundColor": "#72635d80"
       }
@@ -1350,22 +1350,22 @@
     "sizeInMeters": 381,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 23,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 72,
         "backgroundColor": "#72635d80"
       }
@@ -1378,22 +1378,22 @@
     "sizeInMeters": 700,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 23,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 73,
         "backgroundColor": "#72635d80"
       }
@@ -1406,22 +1406,22 @@
     "sizeInMeters": 678,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 20,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 76,
         "backgroundColor": "#72635d80"
       }
@@ -1434,22 +1434,22 @@
     "sizeInMeters": 456,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 20,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 75,
         "backgroundColor": "#72635d80"
       }
@@ -1462,22 +1462,22 @@
     "sizeInMeters": 591,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 9,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 32,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 34,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 25,
         "backgroundColor": "#72635d80"
       }
@@ -1490,22 +1490,22 @@
     "sizeInMeters": 492,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 4,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 16,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 40,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 40,
         "backgroundColor": "#72635d80"
       }
@@ -1518,22 +1518,22 @@
     "sizeInMeters": 672,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 27,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 33,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 37,
         "backgroundColor": "#72635d80"
       }
@@ -1546,22 +1546,22 @@
     "sizeInMeters": 642,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 16,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 34,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 48,
         "backgroundColor": "#72635d80"
       }
@@ -1574,22 +1574,22 @@
     "sizeInMeters": 585,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 5,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 29,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 35,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 31,
         "backgroundColor": "#72635d80"
       }
@@ -1602,22 +1602,22 @@
     "sizeInMeters": 753,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 12,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 14,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 38,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 36,
         "backgroundColor": "#72635d80"
       }
@@ -1630,22 +1630,22 @@
     "sizeInMeters": 420,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 6,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 10,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 41,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 43,
         "backgroundColor": "#72635d80"
       }
@@ -1658,22 +1658,22 @@
     "sizeInMeters": 576,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 13,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 36,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 49,
         "backgroundColor": "#72635d80"
       }
@@ -1686,22 +1686,22 @@
     "sizeInMeters": 522,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 9,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 37,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 52,
         "backgroundColor": "#72635d80"
       }
@@ -1714,22 +1714,22 @@
     "sizeInMeters": 744,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 9,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 40,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 49,
         "backgroundColor": "#72635d80"
       }
@@ -1742,22 +1742,22 @@
     "sizeInMeters": 474,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 6,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 14,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 43,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 37,
         "backgroundColor": "#72635d80"
       }
@@ -1770,22 +1770,22 @@
     "sizeInMeters": 732,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 5,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 37,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 57,
         "backgroundColor": "#72635d80"
       }
@@ -1798,22 +1798,22 @@
     "sizeInMeters": 360,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 6,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 40,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 53,
         "backgroundColor": "#72635d80"
       }
@@ -1826,22 +1826,22 @@
     "sizeInMeters": 663,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 35,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 60,
         "backgroundColor": "#72635d80"
       }
@@ -1854,22 +1854,22 @@
     "sizeInMeters": 339,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 8,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 41,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 50,
         "backgroundColor": "#72635d80"
       }
@@ -1882,22 +1882,22 @@
     "sizeInMeters": 588,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 3,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 9,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 37,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 51,
         "backgroundColor": "#72635d80"
       }
@@ -1910,22 +1910,22 @@
     "sizeInMeters": 684,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 17,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 13,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 25,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 45,
         "backgroundColor": "#72635d80"
       }
@@ -1938,22 +1938,22 @@
     "sizeInMeters": 657,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 7,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 29,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 62,
         "backgroundColor": "#72635d80"
       }
@@ -1966,22 +1966,22 @@
     "sizeInMeters": 500,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 11,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 35,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 52,
         "backgroundColor": "#72635d80"
       }
@@ -1994,22 +1994,22 @@
     "sizeInMeters": 504,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 2,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 10,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 36,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 52,
         "backgroundColor": "#72635d80"
       }
@@ -2022,22 +2022,22 @@
     "sizeInMeters": 720,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 7,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 31,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 61,
         "backgroundColor": "#72635d80"
       }
@@ -2050,22 +2050,22 @@
     "sizeInMeters": 831,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 6,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 27,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 66,
         "backgroundColor": "#72635d80"
       }
@@ -2078,22 +2078,22 @@
     "sizeInMeters": 876,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 27,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 68,
         "backgroundColor": "#72635d80"
       }
@@ -2106,22 +2106,22 @@
     "sizeInMeters": 678,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 0,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 20,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 77,
         "backgroundColor": "#72635d80"
       }
@@ -2134,22 +2134,22 @@
     "sizeInMeters": 729,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 0,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 20,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 77,
         "backgroundColor": "#72635d80"
       }
@@ -2162,22 +2162,22 @@
     "sizeInMeters": 696,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 4,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 23,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 72,
         "backgroundColor": "#72635d80"
       }
@@ -2190,22 +2190,22 @@
     "sizeInMeters": 612,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 1,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 22,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 74,
         "backgroundColor": "#72635d80"
       }
@@ -2218,22 +2218,22 @@
     "sizeInMeters": 357,
     "data": [
       {
-        "label": "At least 1 male and 1 female",
+        "label": "legends.at_least_1_male_and_1_female",
         "value": 0,
         "backgroundColor": "#cc766e80"
       },
       {
-        "label": "At least 1 female",
+        "label": "legends.a_least_1_female",
         "value": 3,
         "backgroundColor": "#7b968780"
       },
       {
-        "label": "No domestic - Boss or employee",
+        "label": "legends.boss_or_employee_no_domestic",
         "value": 34,
         "backgroundColor": "#d9ae3c80"
       },
       {
-        "label": "No domestic - Worker",
+        "label": "legends.workers_no_domestic",
         "value": 63,
         "backgroundColor": "#72635d80"
       }
