@@ -3,10 +3,12 @@
 import { LImageOverlay, LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { reactive, ref, watch } from "vue";
+import { onMounted, reactive, ref, watch } from "vue";
 import piesData from '../assets/pies.json';
 import GeoPie from "./GeoPie.vue";
 import paris_map from '../assets/paris_bien_etre.jpg';
+import Chart from 'chart.js/auto';
+
 
 const pies = reactive(piesData)
 
@@ -133,7 +135,6 @@ const showOldMap = ref(true)
  * Zoom outputted from leaflet, to adjust pie size
  */
 const zoomOnMap = ref(initialZoom)
-
 </script>
 
 <template>
@@ -141,7 +142,7 @@ const zoomOnMap = ref(initialZoom)
         <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
             <!-- <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
-                                                                                                                            name="OpenStreetMap"></l-tile-layer> -->
+                                                                                                                                                                                                                                                                                        name="OpenStreetMap"></l-tile-layer> -->
             <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
@@ -150,6 +151,22 @@ const zoomOnMap = ref(initialZoom)
                         :diameter-in-meters="pie.sizeInMeters" :show-on-top="nearestPieIndex === index"
                         :zooming="zooming" />
                 </div>
+            </div>
+            <div class="legend-panel-container">
+                <div class="legend-panel">
+                    <h1>Evaluation du degré de bien-être de la population par quartier d'après le nombre des domestiques
+                    </h1>
+                    <div class="legend">
+                        <div v-for="d in pies[0].data" :key="d.label" class="legend-row">
+                            <div class="legend-color" :style="{ backgroundColor: d.backgroundColor }"></div>
+                            <p class="legend-label">{{ d.label }}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="legend">
+
             </div>
         </l-map>
     </div>
@@ -187,9 +204,50 @@ const zoomOnMap = ref(initialZoom)
 
 #map-container {
     display: inline-block;
-    height: 80vh;
-    width: 80vw;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
     vertical-align: top;
+}
+
+.leaflet-control-container>div {
+    z-index: 10000;
+}
+
+.legend-panel-container {
+    position: absolute;
+    width: 400px;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+.legend-panel {
+    padding: 10px;
+    background-color: #e8d3b6;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+}
+
+.legend-panel {
+    font-family: "Times New Roman";
+}
+
+.legend-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.legend-label {
+    margin-left: 10px;
+    font-size: .9rem;
+}
+
+.legend-color {
+    width: 40px;
+    height: 24px;
 }
 
 /* canvas {
