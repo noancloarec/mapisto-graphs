@@ -1,20 +1,20 @@
 
 <script setup>
-import { LImageOverlay, LMap } from "@vue-leaflet/vue-leaflet";
+import { LImageOverlay, LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { reactive, ref, watch } from "vue";
 import piesData from '../assets/pies.json';
 import GeoPie from "./GeoPie.vue";
-
-
+import paris_map from '../assets/paris_bien_etre.jpg';
 
 const pies = reactive(piesData)
 
 
-const map = ref(null)
+const mapElement = ref(null)
 
 const initialCenter = new LatLng(48.8566, 2.3522)
+console.log("initialCenter", initialCenter)
 
 /**
  * @type {LatLng}
@@ -64,12 +64,25 @@ const adjustNextSliceToTotal100 = (selectedPieIndex, dataIndex) => {
  */
 const nearestPieIndex = ref(0)
 
+const leafletMap = ref(null)
+
+const determinePiesToDisplay = (waitInMs) => {
+    setTimeout(() => {
+        pies.forEach((pie) => {
+            pie.shouldBeDisplayed = pieIsOnMap(pie)
+        })
+    }, waitInMs)
+}
+
+const zooming = ref(false)
+
 /**
  * Adjusts the nearestPieIndex to the pie that is the nearest to the mouse cursor
  * So the pie that is the nearest to the mouse cursor is always on top
  * @param {LMap} map 
  */
-const followMouseMove = (map) => {
+const onMapReady = (map) => {
+    determinePiesToDisplay(0)
     map.on("mousemove", (e) => {
         const indexAndDistances = pies.map((pie, index) => {
             const distance = new LatLng(pie.latitude, pie.longitude).distanceTo(e.latlng)
@@ -82,8 +95,29 @@ const followMouseMove = (map) => {
             return nearestIndex
         })
         nearestPieIndex.value = nearestIndex.index
+        // setTimeout(() => {
+        //     console.log("old event", e)
+        //     const newEvent = new Event("click")
+        //     console.log("newEvent", newEvent)
+        //     console.log("mapElement", mapElement.value)
+        //     map.fire("click", { latlng: e.latlng,  }, true)
+        // }, 1000)
+        // console.log({ nearestIndex, nearestPieIndex: nearestPieIndex.value })
     })
+    map.on("moveend", () => determinePiesToDisplay(0))
+    map.on("zoomend", () => determinePiesToDisplay(1000))
+    map.on("zoomstart", () => zooming.value = true)
+    map.on("zoomend", () => zooming.value = false)
+    leafletMap.value = map
+
 }
+
+const pieIsOnMap = (pie) => {
+    const mapBounds = leafletMap.value.getBounds()
+    const pieBounds = new LatLng(pie.latitude, pie.longitude).toBounds(pie.sizeInMeters)
+    return mapBounds.intersects(pieBounds)
+}
+
 /**
  * @type {number}
  * Index of the pie that is currently selected
@@ -104,17 +138,19 @@ const zoomOnMap = ref(initialZoom)
 
 <template>
     <div id="map-container">
-        <l-map ref="map" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
-            :center="initialCenter" @ready="followMouseMove" :max-zoom="18">
+        <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
+            :center="initialCenter" @ready="onMapReady" :max-zoom="18">
             <!-- <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" layer-type="base"
-                            name="OpenStreetMap"></l-tile-layer>  -->
-            <l-image-overlay v-if="showOldMap" url="/src/assets/paris_bien_etre_small.jpg"
-                :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
-            <GeoPie v-for="(pie, index) in pies" :key="pie.title" :lat-lng="[pie.latitude, pie.longitude]"
-                :diameter-in-meters="pie.sizeInMeters" :data="pie.data" :zoom-level="zoomOnMap" :id="index"
-                :title="pie.title" :draggable="selectedPie === index"
-                @on-position-updated="position => setPiePosition(pie, position)"
-                :z-index-offset="nearestPieIndex === index ? 9999 : 0" />
+                                                                                                                            name="OpenStreetMap"></l-tile-layer> -->
+            <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
+            <div v-if="leafletMap">
+                <div v-for="(pie, index) in pies" :key="pie.title">
+                    <GeoPie v-if="pie.shouldBeDisplayed" :data="pie.data" :title="pie.title" :parent-map="leafletMap"
+                        :lat-lng="[pie.latitude, pie.longitude]" :zoomLevel="zoomOnMap"
+                        :diameter-in-meters="pie.sizeInMeters" :show-on-top="nearestPieIndex === index"
+                        :zooming="zooming" />
+                </div>
+            </div>
         </l-map>
     </div>
     <div class="pie-edition-form">
@@ -151,8 +187,8 @@ const zoomOnMap = ref(initialZoom)
 
 #map-container {
     display: inline-block;
-    height: 100vh;
-    width: 100vw;
+    height: 80vh;
+    width: 80vw;
     vertical-align: top;
 }
 

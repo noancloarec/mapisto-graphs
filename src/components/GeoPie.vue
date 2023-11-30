@@ -1,18 +1,17 @@
 <script setup>
-import { LIcon, LMarker } from "@vue-leaflet/vue-leaflet";
 import Chart from 'chart.js/auto';
-import { LatLng } from "leaflet";
-import { defineEmits, defineProps,  watch, computed } from 'vue';
+import { LatLng, Map, Point, map } from "leaflet";
+import { computed, defineEmits, defineProps, onMounted, ref, watch } from 'vue';
 
 
 const props = defineProps({
     /**
      * Identifier for the pie, for technical purposes
      */
-    id: {
-        type: [String, Number],
-        required: true
-    },
+    // id: {
+    //     type: [String, Number],
+    //     required: true
+    // },
     /**
      * Latitude and longitude of the center of the pie
      */
@@ -33,7 +32,7 @@ const props = defineProps({
      */
     data: {
         type: Array,
-        required: true
+        required: false
     },
     /**
      * Title of the pie
@@ -41,7 +40,7 @@ const props = defineProps({
      */
     title: {
         type: String,
-        required: true
+        required: false
     },
     /**
      * Zoom level of the containing map
@@ -53,17 +52,29 @@ const props = defineProps({
     /**
      * Whether the pie can be dragged by the user
      */
-    draggable: {
-        type: Boolean,
-        required: true
-    },
+    // draggable: {
+    //     type: Boolean,
+    //     required: true
+    // },
     /**
      * Z index offset of the pie.
      * Useful to make the canvas appear on top of potential overlapping canvases
      */
-    zIndexOffset: {
-        type: Number,
-        required: true
+    // zIndexOffset: {
+    //     type: Number,
+    //     required: true
+    // },
+    parentMap: {
+        type: Map,
+        required: true,
+    },
+    showOnTop: {
+        type: Boolean,
+        required: false,
+    },
+    zooming: {
+        type: Boolean,
+        required: false,
     }
 })
 
@@ -72,29 +83,36 @@ const props = defineProps({
  */
 defineEmits(['onPositionUpdated'])
 
+// const latLng = new LatLng(props.latLng[0], props.latLng[1])
+
 /**
  * Computes the size of the pie in pixels, based on the zoom level of the map
- * @see https://gis.stackexchange.com/questions/7430/what-ratio-scales-do-google-maps-zoom-levels-correspond-to
+//  * @see https://gis.stackexchange.com/questions/7430/what-ratio-scales-do-google-maps-zoom-levels-correspond-to
  * @returns 
  */
 
+
+const getCircleSizeInPixels = () => {
+    const metersPerPx = 156543.03392 * Math.cos(props.latLng[0] * Math.PI / 180) / Math.pow(2, props.parentMap.getZoom())
+    const size = Math.round(props.diameterInMeters / metersPerPx)
+    return size + 220;
+}
 /**
  * Current circle size in pixels
  */
-const circleSizeInPixels = computed(() => {
-    const metersPerPx = 156543.03392 * Math.cos(props.latLng[0] * Math.PI / 180) / Math.pow(2, props.zoomLevel)
-    const size = props.diameterInMeters / metersPerPx
-    return size + 220;
-})
+const circleSizeInPixels = ref(getCircleSizeInPixels())
 
 
-let chart = undefined
+// let chart = undefined
+const pie = ref(null)
 /**
  * Draws the pie chart
  */
 const drawChart = () => {
-    chart?.destroy()
-    chart = new Chart(document.getElementById(props.id), {
+    const dest = pie.value.getContext('2d')
+
+
+    new Chart(dest, {
         type: 'pie',
         data: {
             labels: props.data.map((item) => item.label),
@@ -108,57 +126,80 @@ const drawChart = () => {
         },
         options: {
             rotation: 180,
-            layout: {
-                padding: {
-                    right: 110,
-                    left: 110,
-                    top: 0,
-                    bottom: 0
-                }
-            },
-            animation: {
-                duration: 0
-            },
-
             plugins: {
                 legend: {
                     display: false
                 },
-            }
+            },
+            animation: {
+                duration: 0
+            },
+            layout: {
+                padding: 110
+            },
         }
-    })
+    });
 }
-
 /**
  * Redraws the pie when props are updated to match the new zoom level
  * We should not have to do that but vue-leaflet destroys the canvas whenever props change
  */
-watch(props, () => scheduleChartRedraw(1000))
-
-/**
- * Schedules a chart redraw
- * @param {number} time to wait before redrawing the chart in milliseconds
- */
-const scheduleChartRedraw = (ms) => {
-    setTimeout(() => {
-        drawChart()
-    }, ms ? 100 : ms)
+const adaptPieSizeAndPosition = () => {
+    position.value = props.parentMap.latLngToContainerPoint(props.latLng)
+    circleSizeInPixels.value = getCircleSizeInPixels()
 }
+const position = ref(
+    props.parentMap.latLngToContainerPoint(props.latLng)
+)
+
+const chartContainer = ref(null)
+const mapBeingDragged = ref(false)
+onMounted(() => {
+
+    drawChart()
+    props.parentMap.on("movestart", () => mapBeingDragged.value = true)
+    props.parentMap.on("move", (e) => {
+        adaptPieSizeAndPosition()
+    })
+    props.parentMap.on("moveend", () => {
+        mapBeingDragged.value = false
+    })
+})
+
+
+
 </script>
 
 <template>
-    <l-marker :z-index-offset="props.zIndexOffset" :lat-lng="props.latLng" :draggable="props.draggable"
-        @update:lat-lng="$emit(onPositionUpdated($event))" >
-        <l-icon :icon-size="[circleSizeInPixels, circleSizeInPixels]"
-            :icon-anchor="[circleSizeInPixels / 2, circleSizeInPixels / 2]" class-name="someExtraClass"
-            @ready="scheduleChartRedraw"
-            >
-            <div class="chart-container">
-                <canvas :id="id"></canvas>
-            </div>
-        </l-icon>
-    </l-marker>
+    <div class="chart-container" ref="chartContainer" :style="{
+        width: circleSizeInPixels + 'px',
+        height: circleSizeInPixels + 'px',
+        top: position.y - circleSizeInPixels / 2 + 'px',
+        left: position.x - circleSizeInPixels / 2 + 'px',
+        transition: mapBeingDragged ? 'none' : 'all 0.2s',
+    }" :class="{ 'do-not-transition': mapBeingDragged, 'show-on-top': showOnTop, 'fade-during-zoom': zooming }">
+        <canvas ref="pie"></canvas>
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.chart-container {
+    position: absolute;
+    z-index: 1000;
+    transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s, opacity 0.2s;
+    ;
+}
+
+.chart-container.do-not-transition {
+    transition: none;
+}
+
+.chart-container.show-on-top {
+    z-index: 1001;
+}
+
+.chart-container.fade-during-zoom {
+    opacity: 0.1;
+}
+</style>
 ```
