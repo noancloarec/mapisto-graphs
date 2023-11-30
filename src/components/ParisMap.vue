@@ -1,23 +1,18 @@
 
 <script setup>
 
-import { LImageOverlay, LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
+import { LImageOverlay, LMap } from "@vue-leaflet/vue-leaflet";
 import { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { onMounted, reactive, ref, watch } from "vue";
+import { reactive, ref } from "vue";
+import paris_map from '../assets/paris_bien_etre.jpg';
 import piesData from '../assets/pies.json';
 import GeoPie from "./GeoPie.vue";
-import paris_map from '../assets/paris_bien_etre.jpg';
-import { nextTick } from "vue";
+
 
 const pies = reactive(piesData)
 
-console.log(navigator.languages)
-
-const mapElement = ref(null)
-
 const initialCenter = new LatLng(48.8581451743888, 2.315702514296674)
-console.log("initialCenter", initialCenter)
 
 /**
  * @type {LatLng}
@@ -41,17 +36,7 @@ const computeZoomLevelBasedOnScreenSize = () => {
  * Initial zoom level for the map
  */
 const initialZoom = computeZoomLevelBasedOnScreenSize()
-console.log("initialZoom", initialZoom)
 
-/**
- * Set a new position for a pie
- * @param {Object} pie the pie to update
- * @param {LatLng} newPosition the new position for the pie
- */
-const setPiePosition = (pie, newPosition) => {
-    pie.latitude = newPosition.lat
-    pie.longitude = newPosition.lng
-}
 
 /**
  * Add a new pie to the map that will have the sames slices as the last one, and select it
@@ -88,8 +73,6 @@ const determinePiesToDisplay = (waitInMs) => {
         })
     }, waitInMs)
 }
-
-const zooming = ref(false)
 
 const risePointedChartToTop = (e, reTriggerMouseMove) => {
     /**
@@ -167,16 +150,21 @@ const showOldMap = ref(true)
  * Zoom outputted from leaflet, to adjust pie size
  */
 const zoomOnMap = ref(initialZoom)
+
+const legendIsDrawnBack = ref(false)
+const hidePanel = () => {
+    legendIsDrawnBack.value = !legendIsDrawnBack.value
+}
 </script>
 
 <template>
     <div id="map-container">
-        <l-map ref="mapElement" @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
+        <l-map @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
             <!-- <l-tile-layer
-                                                                                                                                                                                                                                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
-                                                                                                                                                                                                                                    attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
-                                                                                                                                                                                                                                    name="OpenStreetMap"></l-tile-layer> -->
+                                                                                                                                                                                                                                                                                                                                                                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
+                                                                                                                                                                                                                                                                                                                                                                    attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
+                                                                                                                                                                                                                                                                                                                                                                    name="OpenStreetMap"></l-tile-layer> -->
             <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
@@ -185,7 +173,8 @@ const zoomOnMap = ref(initialZoom)
                         :show-on-top="nearestPieIndex === index" />
                 </div>
             </div>
-            <div class="legend-panel-container">
+            <div :class="{ 'legend-panel-container': true, 'drawn-back': legendIsDrawnBack }">
+                <button @click="hidePanel">{{ legendIsDrawnBack ? '▲' : '▼' }}</button>
                 <div class="legend-panel">
                     <h1>{{ $t("chart_titles.well_being_evaluation_by_number_of_domestic") }}</h1>
                     <div class="legend">
@@ -195,9 +184,6 @@ const zoomOnMap = ref(initialZoom)
                         </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="legend">
 
             </div>
         </l-map>
@@ -253,6 +239,22 @@ const zoomOnMap = ref(initialZoom)
     bottom: 0;
     left: 0;
     z-index: 10000;
+    transition: transform 0.5s;
+}
+
+.legend-panel-container.drawn-back {
+    transform: translateY(100%) translateY(-19px);
+}
+
+.legend-panel-container>button {
+    border: 1px solid black;
+    outline-style: none;
+    background-color: #e8d3b6;
+    width: 50px;
+    margin-bottom: -1px;
+    display: block;
+    height: 20px;
+    border-left: none;
 }
 
 .legend-panel {
@@ -280,6 +282,7 @@ const zoomOnMap = ref(initialZoom)
 
 .legend-color {
     width: 40px;
+    min-width: 40px;
     height: 24px;
 }
 

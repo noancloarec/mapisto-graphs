@@ -1,11 +1,8 @@
 <script setup>
 import Chart from 'chart.js/auto';
-import { LatLng, Map, Point, map } from "leaflet";
-import { computed, defineEmits, defineProps, onMounted, ref, watch } from 'vue';
+import { LatLng, Map } from "leaflet";
+import { defineProps, onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import Lmap from "leaflet"
-import { nextTick } from 'vue';
-import { onUnmounted } from 'vue';
 
 
 const props = defineProps({
@@ -87,7 +84,7 @@ const drawChart = () => {
     const dest = pie.value.getContext('2d')
 
 
-    const chart = new Chart(dest, {
+    new Chart(dest, {
         type: 'pie',
         data: {
             labels: props.data.map((item) => t(item.label)),
@@ -129,7 +126,8 @@ const drawChart = () => {
 
                             }
                         }
-                    }
+                    },
+                    yAlign: 'bottom',
                 }
             },
             animation: {
