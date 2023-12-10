@@ -55,10 +55,6 @@ const props = defineProps({
 
 const { t } = useI18n()
 
-/**
- * Whether the parent map is zooming or not
- */
-const parentMapIsZooming = ref(false)
 
 /**
  * Computes the size of the pie in pixels, plus the padding, based on the zoom level of the map
@@ -136,6 +132,9 @@ const drawChart = () => {
             layout: {
                 padding: 165
             },
+            onResize: () => {
+                transparentChart.value = false
+            }
         }
     });
 }
@@ -144,12 +143,13 @@ const position = ref(
     props.parentMap.latLngToContainerPoint(props.latLng)
 )
 
+const transparentChart = ref(false)
+
 const chartContainer = ref(null)
 
-const onZoomStart = () => parentMapIsZooming.value = true
+const onZoomStart = () => transparentChart.value = true
 const onZoomEnd = () => {
     circleSizeInPixels.value = getCircleSizeInPixels()
-    parentMapIsZooming.value = false
 }
 const onMove = () => {
     position.value = props.parentMap.latLngToContainerPoint(props.latLng)
@@ -177,7 +177,7 @@ onUnmounted(() => {
         height: circleSizeInPixels + 'px',
         top: position.y - circleSizeInPixels / 2 + 'px',
         left: position.x - circleSizeInPixels / 2 + 'px',
-    }" :class="{ 'show-on-top': showOnTop, 'faded-out': parentMapIsZooming }">
+    }" :class="{ 'show-on-top': showOnTop, 'faded-out': transparentChart }">
         <canvas ref="pie"></canvas>
     </div>
 </template>
@@ -186,7 +186,6 @@ onUnmounted(() => {
 .chart-container {
     position: absolute;
     z-index: 1000;
-    transition-delay: 0.5s;
     transition: opacity 0.5s;
     opacity: 1;
 }
@@ -198,7 +197,6 @@ onUnmounted(() => {
 
 .chart-container.faded-out {
     transition: opacity 0s;
-    transition-delay: 0s;
     opacity: 0;
 }
 </style>
