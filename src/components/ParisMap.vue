@@ -1,11 +1,10 @@
 
 <script setup>
 
-import { LImageOverlay, LMap } from "@vue-leaflet/vue-leaflet";
+import { LMap, LTileLayer } from "@vue-leaflet/vue-leaflet";
 import { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { reactive, ref } from "vue";
-import paris_map from '../assets/paris_bien_etre.jpg';
 import piesData from '../assets/pies.json';
 import GeoPie from "./GeoPie.vue";
 
@@ -161,11 +160,8 @@ const hidePanel = () => {
     <div id="map-container">
         <l-map @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="18">
-            <!-- <l-tile-layer
-                                                                                                                                                                                                                                                                                                                                                                    url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}"
-                                                                                                                                                                                                                                                                                                                                                                    attribution="Tiles &copy; Esri &mdash; Source: Esri" , layer-type="base"
-                                                                                                                                                                                                                                                                                                                                                                    name="OpenStreetMap"></l-tile-layer> -->
-            <l-image-overlay v-if="showOldMap" :url="paris_map" :bounds="[[48.913, 2.205], [48.802, 2.428]]" />
+            <l-tile-layer url="https://mapisto-tiles.web.app/paris_bien_etre_1886/{z}/{x}/{y}.jpg" attribution="Gallica" ,
+                layer-type="base" name="OpenStreetMap" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
                     <GeoPie v-if="pie.shouldBeDisplayed" :data="pie.data" :title="pie.title" :parent-map="leafletMap"
@@ -232,7 +228,12 @@ const hidePanel = () => {
     z-index: 10000;
 }
 
+.leaflet-container {
+    background-color: white;
+}
+
 .legend-panel-container {
+    color: black;
     position: absolute;
     width: 400px;
     max-width: 100%;
@@ -247,6 +248,7 @@ const hidePanel = () => {
 }
 
 .legend-panel-container>button {
+    color: black;
     border: 1px solid black;
     outline-style: none;
     background-color: #e8d3b6;
@@ -285,9 +287,4 @@ const hidePanel = () => {
     min-width: 40px;
     height: 24px;
 }
-
-/* canvas {
-    border: 1px solid red;
-    cursor: move;
-} */
 </style>
