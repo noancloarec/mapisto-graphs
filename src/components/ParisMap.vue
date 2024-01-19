@@ -160,7 +160,8 @@ const hidePanel = () => {
     <div id="map-container">
         <l-map @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="16">
-            <l-tile-layer url="https://mapisto-tiles.web.app/paris_bien_etre_1886/{z}/{x}/{y}.jpg" attribution="Gallica" ,
+            <l-tile-layer url="https://mapisto-tiles.web.app/paris_bien_etre_1886/{z}/{x}/{y}.jpg"
+                attribution='Source: <a href= "https://gallica.bnf.fr/ark:/12148/btv1b52510505s/f13.item"> Gallica </a>' ,
                 layer-type="base" name="OpenStreetMap" />
             <div v-if="leafletMap">
                 <div v-for="(pie, index) in pies" :key="pie.title">
