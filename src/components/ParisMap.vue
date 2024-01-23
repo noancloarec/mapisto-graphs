@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import { reactive, ref } from "vue";
 import piesData from '../assets/pies.json';
 import GeoPie from "./GeoPie.vue";
+import VueTitle from "./VueTitle.vue";
 
 
 const pies = reactive(piesData)
@@ -157,6 +158,7 @@ const hidePanel = () => {
 </script>
 
 <template>
+    <VueTitle :title='$t("page_titles.paris_well_being_1886")'></VueTitle>
     <div id="map-container">
         <l-map @update:zoom="zoomOnMap = $event" :zoom="initialZoom" @update:center="pieOrigin = $event"
             :center="initialCenter" @ready="onMapReady" :max-zoom="16">
@@ -164,7 +166,7 @@ const hidePanel = () => {
                 attribution='Source: <a href= "https://gallica.bnf.fr/ark:/12148/btv1b52510505s/f13.item"> Gallica </a>' ,
                 layer-type="base" name="OpenStreetMap" />
             <div v-if="leafletMap">
-                <div v-for="(pie, index) in pies" :key="pie.title">
+                <div v-for="( pie, index ) in  pies " :key="pie.title">
                     <GeoPie v-if="pie.shouldBeDisplayed" :data="pie.data" :title="pie.title" :parent-map="leafletMap"
                         :lat-lng="[pie.latitude, pie.longitude]" :diameter-in-meters="pie.sizeInMeters"
                         :show-on-top="nearestPieIndex === index" />
@@ -175,7 +177,7 @@ const hidePanel = () => {
                 <div class="legend-panel">
                     <h1>{{ $t("chart_titles.well_being_evaluation_by_number_of_domestic") }}</h1>
                     <div class="legend">
-                        <div v-for="d in pies[0].data" :key="d.label" class="legend-row">
+                        <div v-for=" d  in  pies[0].data " :key="d.label" class="legend-row">
                             <div class="legend-color" :style="{ backgroundColor: d.backgroundColor }"></div>
                             <p class="legend-label">{{ $t(d.label) }}</p>
                         </div>
@@ -185,7 +187,7 @@ const hidePanel = () => {
             </div>
         </l-map>
     </div>
-    <div class="pie-edition-form">
+    <!-- <div class="pie-edition-form">
 
         <input type="checkbox" v-model="showOldMap" />
         <button @click="addPieAndSelectIt">Add pie</button>
@@ -208,7 +210,7 @@ const hidePanel = () => {
             <output>{{ item.value }}</output>
         </div>
         <textarea :value="JSON.stringify(pies)"></textarea>
-    </div>
+    </div> -->
 </template>
 
 <style>

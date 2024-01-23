@@ -7,5 +7,8 @@
     },
     "chart_titles": {
         "well_being_evaluation_by_number_of_domestic": "Évaluation du degré de bien être de la population par quartier d'après le nombre de domestiques (1886)"
+    },
+    "page_titles": {
+        "paris_well_being_1886": "Bien-être à Paris en 1886"
     }
 }

@@ -1,5 +1,7 @@
 import { nextTick } from 'vue';
 import { createI18n } from 'vue-i18n';
+import fr from './locales/fr.json';
+import en from './locales/en.json';
 
 let i18n;
 
@@ -10,7 +12,6 @@ export const SUPPORT_LOCALES = ['en', 'fr'];
  * @param {string} locale 
  */
 export const setI18nLanguage = (locale) => {
-    loadLocaleMessages(locale);
 
     if (i18n.mode === 'legacy') {
         i18n.global.locale = locale;
@@ -38,23 +39,6 @@ export const getPreferredLanguage = () => {
 }
 
 
-/** 
- * Load and set locale messages with dynamic import
- * @param {string} locale
- * @returns {Promise<void>}
- */
-const loadLocaleMessages = async (locale) => {
-    // 
-    const messages = await import(
-        `./locales/${locale}.json`
-    );
-
-    // set locale and locale message
-    i18n.global.setLocaleMessage(locale, messages.default);
-
-    return nextTick();
-}
-
 /**
  * Return the i18n instance so translations can be used by components
  * Setup the i18n instance 
@@ -66,7 +50,11 @@ export default function setupI18n() {
             globalInjection: true,
             legacy: false,
             locale: locale,
-            fallbackLocale: locale
+            fallbackLocale: locale,
+            messages: {
+                en,
+                fr
+            }
         });
 
 

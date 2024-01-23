@@ -7,5 +7,8 @@
     },
     "chart_titles": {
         "well_being_evaluation_by_number_of_domestic": "Population well-being evaluation by neighborhood based on the number of domestics (1886)"
+    },
+    "page_titles": {
+        "paris_well_being_1886": "Paris well-being in 1886"
     }
 }
