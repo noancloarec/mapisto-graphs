@@ -5,7 +5,11 @@ let i18n;
 
 export const SUPPORT_LOCALES = ['en', 'fr'];
 
-export function setI18nLanguage(locale) {
+/**
+ * Change the current locale and save the preference to the local storage
+ * @param {string} locale 
+ */
+export const setI18nLanguage = (locale) => {
     loadLocaleMessages(locale);
 
     if (i18n.mode === 'legacy') {
@@ -18,10 +22,31 @@ export function setI18nLanguage(locale) {
     localStorage.setItem('lang', locale);
 }
 
-export async function loadLocaleMessages(locale) {
-    // load locale messages with dynamic import
+
+/**
+ * Find the preferred language from the local storage or the browser
+ * @returns {string} The preferred language
+ */
+export const getPreferredLanguage = () => {
+    const browserLanguage = navigator.language.split('-')[0];
+    const locale = localStorage.getItem('lang') || browserLanguage;
+    if (new Set(["en", "fr"]).has(locale)) {
+        return locale
+    } else {
+        return "en"
+    }
+}
+
+
+/** 
+ * Load and set locale messages with dynamic import
+ * @param {string} locale
+ * @returns {Promise<void>}
+ */
+const loadLocaleMessages = async (locale) => {
+    // 
     const messages = await import(
-    /* webpackChunkName: "locale-[request]" */ `./locales/${locale}.json`
+        `./locales/${locale}.json`
     );
 
     // set locale and locale message
@@ -30,17 +55,20 @@ export async function loadLocaleMessages(locale) {
     return nextTick();
 }
 
+/**
+ * Return the i18n instance so translations can be used by components
+ * Setup the i18n instance 
+ **/
 export default function setupI18n() {
-    const browserLanguage = navigator.language.split('-')[0];
     if (!i18n) {
-        let locale = localStorage.getItem('lang') || browserLanguage;
-
+        const locale = getPreferredLanguage()
         i18n = createI18n({
             globalInjection: true,
             legacy: false,
             locale: locale,
-            fallbackLocale: browserLanguage
+            fallbackLocale: locale
         });
+
 
         setI18nLanguage(locale);
     }

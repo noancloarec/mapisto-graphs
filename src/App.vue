@@ -1,16 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import LanguageChoice from './components/LanguageChoice.vue';
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/map">Paris Map</RouterLink>
-      </nav>
-    </div>
+    <nav>
+      <LanguageChoice />
+    </nav>
   </header>
 
   <RouterView />
@@ -20,62 +17,15 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   line-height: 1.5;
   position: fixed;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+  z-index: 99999;
+  width: 100%;
+  pointer-events: none;
 }
 
 nav {
   width: 100%;
   font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+  text-align: right;
+  padding: 3px;
 }
 </style>
